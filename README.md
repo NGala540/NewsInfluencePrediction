@@ -1,2 +1,5 @@
 # NewsInfluencePrediction
-desktop app for news web scrap and predicting their influence on stock market with ML 
+This is a desktop app for news web scrap and predicting their influence on stock market with ML - project in progress
+
+data scrapped from: https://www.biznesradar.pl/
+embeding file: http://publications.it.p.lodz.pl/2016/word_embeddings/
