@@ -18,7 +18,7 @@ def scrapper(companies):
                         attributes_container['Headline'].append(elem.contents[1].string)
                         attributes_container['Company'].append(company)
                     elif elem['class'] == ['record-body']:
-                        attributes_container['Text'].append(elem.string)
+                        attributes_container['Text'].append(elem.string.replace("\n", "").replace("\t", "").lstrip())
                     elif elem['class'] == ['record-footer']:
                         if elem.contents[1]['class'] == ['record-author']:
                             attributes_container['Author'].append(elem.contents[1].string)
@@ -26,7 +26,6 @@ def scrapper(companies):
                             attributes_container['Author'].append('NA')
                 except KeyError:
                     continue
-            # TODO: get 'span' to div
             elif elem.name == 'span':
                 try:
                     if elem['class'] == ['record-date']:
@@ -43,7 +42,7 @@ def is_current(attributes_container):
     df['Date'] = pd.to_datetime(df['Date'])
     # TODO: Iterating through pandas objects is generally slow. In many cases, iterating manually over the rows is not needed
     for index, row in df.iterrows():
-        if row['Date'] >= datetime.now() - timedelta(minutes=150):
+        if row['Date'] >= datetime.now() - timedelta(minutes=90):
             results.append(row)
 
     return results
@@ -56,13 +55,12 @@ def print_article(article, model, tokenizer):
     f'Headline: {str(article[2])}\n' +\
     f'Text: {str(article[3])}\n' +\
     f'Date: {str(article[4])}\n' +\
-    f'Score: {round(model.predict([corpus])[0][0] * 100)} \n' +\
-    '-------------------------------- \n'
+    f'Score: {round(model.predict([corpus])[0][0] * 100)} \n'
     return result
 
 def input_processor(head, body, tokenizer):
     concat = head + " " + body
     tokenized = tokenizer.texts_to_sequences([concat])
-    padded = pad_sequences(tokenized, maxlen=80)
+    padded = pad_sequences(tokenized, maxlen=100)
     result = np.asarray(padded).astype('float32')
     return result
