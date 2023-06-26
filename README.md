@@ -16,12 +16,14 @@ Used technologies: Python, Jupyter Notebook, Tkinter, BeautifulSoup, Keras, Scik
 
 ## Usage:
 After running the app, first what you will see after a few seconds is the window with potential news:
-![image](https://github.com/NGala540/NewsInfluencePrediction/assets/109106650/d1426096-cd41-44e6-b845-c75a9930f36f)
+
+![image](https://github.com/NGala540/NewsInfluencePrediction/assets/109106650/f75d232b-67fb-4127-ab3a-820b38b89afb)
+
 On the top (1) you can see the headline of the app telling which news is displayed right now and how many of them were scrapped in these 15 minutes, below (2) there is a text box displaying all information about the news (in Polish), including a shortcut of the news and score. Further down (3) there are buttons to switch between scrapped news, and finally (4) there is a box to provide feedback for the model and changed score of the news.
 
 Where there was no news in the past 15 minutes you will see "NO NEWS IN PAST 15 MINUTES" in the text box, when new news is provided you will hear a system sound and see this on the bar:
-![image](https://github.com/NGala540/NewsInfluencePrediction/assets/109106650/c8250634-4352-4c74-9178-ab293e9d0be7)
 
+![image](https://github.com/NGala540/NewsInfluencePrediction/assets/109106650/c8250634-4352-4c74-9178-ab293e9d0be7)
 
 data scrapped from: https://www.biznesradar.pl/
 
