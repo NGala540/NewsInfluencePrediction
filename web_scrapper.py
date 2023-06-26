@@ -1,7 +1,7 @@
 import urllib.request
 from urllib.error import HTTPError
-from bs4 import BeautifulSoup
-import pandas as pd
+from bs4 import BeautifulSoup  # version 0.0.1
+import pandas as pd  # version 2.0.2
 import pyarrow.feather as feather  # version 12.0.0
 
 while True:

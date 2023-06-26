@@ -1,7 +1,7 @@
 from tkinter import *
 import tkinter.messagebox
 import atexit
-from apscheduler.schedulers.background import BackgroundScheduler
+from apscheduler.schedulers.background import BackgroundScheduler  # version 3.10.1
 from apscheduler.events import EVENT_JOB_ERROR, EVENT_JOB_EXECUTED
 from app_functions import *
 

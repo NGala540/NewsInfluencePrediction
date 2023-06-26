@@ -1,10 +1,10 @@
 import urllib.request
-from bs4 import BeautifulSoup
-import pandas as pd
+from bs4 import BeautifulSoup  # version 0.0.1
+import pandas as pd  # version 2.0.2
 from datetime import datetime, timedelta
-import numpy as np
-from keras_preprocessing.sequence import pad_sequences
-import joblib
+import numpy as np  # version 1.23.5
+from keras_preprocessing.sequence import pad_sequences  # version 1.1.2
+import joblib  # version 1.2.0
 
 # tokenizer and model upload, variable declaration whether model was changes or not
 tokenizer = joblib.load('tokenizer.joblib')
